@@ -71,6 +71,8 @@ class Outcome:
 
         elif(houseSum > 21):
             print("The house busted!")
+    
+        Main().mainFunction()    
 
     def hitorStand(self,playerSum,houseSum,hands):
         while(playerSum < 21):
@@ -111,12 +113,11 @@ class Initialhands:
         return houseSum
 
 class Main:
-    def mainFunction(self):
+    def mainFunction(self): 
         hands = Hands().makingHand()
         playerSum = Initialhands().initialPLayer(hands)
         houseSum = Initialhands().initialHouse(hands)
         Outcome().houseHit(houseSum,hands)
         Outcome().hitorStand(playerSum,houseSum,hands)
         
-            
 Main().mainFunction()   
